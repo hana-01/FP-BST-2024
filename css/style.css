@@ -1,0 +1,441 @@
+:root
+{
+    --clr-body-bg: hsl(224, 26%, 31%);
+    --clr-calc-bg: hsl(31, 84%, 85%);
+
+}
+
+
+body{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--clr-body-bg);
+}
+
+.calculator{
+    width: 50%;
+    height: 500px;
+    background-color: var(--clr-calc-bg);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 7px 7px 12px #091230,
+                -7px -7px 12px #091230;
+}
+
+.calc-tittle{
+    width: 100%;
+    display: flex;
+    margin-block: 10px;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.toggle-option{
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.theme-toggle{
+    display: flex;
+    height: 50px;
+    width: 130px;
+    justify-content: center;
+    align-items: center;
+    background-color: #181f32;
+    border-radius: 999px;
+    position: relative;
+    overflow: hidden;
+    margin-inline: 10px;
+}
+
+#theme-toggle-1,
+#theme-toggle-2,
+#theme-toggle-3{
+    margin-inline: 10px;
+    margin-block: 3px;
+}
+
+.theme-toggle input[type="radio"]{
+    appearance: none;
+    width: 1rem;
+    height: 1rem;
+    outline: 3px solid hsl(31, 84%, 85%);;
+    border-radius: 50%;
+    outline-offset: 3px;
+}
+
+.theme-toggle input[type="radio"]:checked{
+    background-color: hsl(31, 84%, 85%);;
+}
+
+.calc-input #screen{
+    width: 99%;
+    height: 85px;
+    text-align: right;
+    font-size: 4em;
+    border-radius: 8px ;
+    border: none;
+    outline: none;
+    margin: 2px 0;
+    background-color: #181f32;
+    color: white;
+}
+
+.calc-container{
+    width: 100%;
+    height: auto;  
+    margin-top: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #181f32;
+    border-radius: 8px;
+}
+
+.calc-container .row button{
+    width: 105px;
+    height: 50px;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    margin: 5px;
+    border-radius: 4px;
+    background-color: #F5EDED;
+    box-shadow: 0px 3.5px #ECCA9C;
+} 
+
+.row button:hover {
+    box-shadow: inset 5px 5px 8px rgba(16, 16, 16, .1),
+        inset -5px -5px 8px #fff;
+    background: #fff;
+}
+
+#eval {
+    background-color: orangered;
+    color: white;
+}
+
+#clear-button,
+#backspace-btn{
+    background-color: #74512D;
+    color: white;
+}
+
+:root:has(#theme-toggle-1:checked){
+    --clr-body-bg: hsl(224, 26%, 31%);
+    --clr-calc-bg: hsl(31, 84%, 85%);
+}
+
+:root:has(#theme-toggle-2:checked){
+    --clr-body-bg: #331D2C;
+    --clr-calc-bg: #EFE1D1;
+}
+
+:root:has(#theme-toggle-3:checked){
+    --clr-body-bg: #6D5D6E;
+    --clr-calc-bg: #93B1A6;
+}
+
+
+@media only screen and (max-width: 376px){
+    .calculator{
+        width: 100%;
+        height: 100%;
+
+    }
+
+    .calc-container{
+        padding: 10px;
+        height: 320px;
+    }
+    
+    .for-pc{
+        display: none;
+    }
+
+    .calc-container .row {
+        display: flex;
+        flex-wrap: wrap; /* Ensure buttons wrap to the next line if needed */
+        gap: 4px; /* Add space between button blocks */
+    }
+
+    .calc-container .row button{
+        width: 60px;
+        height: 50px;
+        margin: 4px 1px;
+        padding-block: 20px;
+        font-size: 14px;
+        box-shadow: 0px 1px #ECCA9C;
+    }
+
+    .calc-input #screen{
+        height: 250px;
+        text-align: right;
+    }
+
+    .row button:hover {
+        box-shadow: inset 5px 5px 8px rgba(16, 16, 16, .1),
+            inset -5px -5px 8px #fff;
+        background: #fff;
+    }
+}
+
+@media only screen and (min-width: 376px) and (max-width: 426px) {
+    .calculator{
+        width: 100%;
+        height: 100%;
+
+    }
+
+    .calc-container{
+        padding: 10px;
+        height: 320px;
+    }
+
+    .calc-container .row {
+        display: flex;
+        flex-wrap: wrap; /* Ensure buttons wrap to the next line if needed */
+        gap: 4px; /* Add space between button blocks */
+    }
+
+    .calc-container .row button{
+        width: 55px;
+        height: 40px;
+        margin: 7px 1px;
+        font-size: 14px;
+        box-shadow: 0px 2px #ECCA9C;
+    }
+
+    .calc-input #screen{
+        height: 250px;
+        text-align: right;
+    }
+
+    .row button:hover {
+        box-shadow: inset 5px 5px 8px rgba(16, 16, 16, .1),
+            inset -5px -5px 8px #fff;
+        background: #fff;
+    }
+} 
+
+@media only screen and (min-width: 426px) and (max-width: 770px) {
+    .calculator{
+        width: 70%;
+        height: 70%;
+
+    }
+
+    .calc-container{
+        padding: 10px;
+        height: 320px;
+    }
+
+    .calc-container .row {
+        display: flex;
+        flex-wrap: wrap; /* Ensure buttons wrap to the next line if needed */
+        gap: 4px; /* Add space between button blocks */
+    }
+
+    .calc-container .row button{
+        width: 75px;
+        height: 40px;
+        margin: 7px 3px;
+        font-size: 14px;
+        box-shadow: 0px 2px #ECCA9C;
+    }
+
+    .calc-input #screen{
+        height: 90px;
+        text-align: right;
+    }
+
+    .row button:hover {
+        box-shadow: inset 5px 5px 8px rgba(16, 16, 16, .1),
+            inset -5px -5px 8px #fff;
+        background: #fff;
+    }
+} 
+
+@media only screen and (min-width: 770px) and (max-width: 1026px) {
+    .calculator{
+        width: 70%;
+        height: 70%;
+
+    }
+
+    .calc-container{
+        padding: 10px;
+        height: 320px;
+    }
+
+    .calc-container .row {
+        display: flex;
+        flex-wrap: wrap; /* Ensure buttons wrap to the next line if needed */
+        gap: 4px; /* Add space between button blocks */
+    }
+
+    .calc-container .row button{
+        width: 100px;
+        height: 40px;
+        margin: 7px 3px;
+        font-size: 14px;
+        box-shadow: 0px 2px #ECCA9C;
+    }
+
+    .calc-input #screen{
+        height: 90px;
+        text-align: right;
+    }
+
+    .row button:hover {
+        box-shadow: inset 5px 5px 8px rgba(16, 16, 16, .1),
+            inset -5px -5px 8px #fff;
+        background: #fff;
+    }
+} 
+
+@media only screen and (min-width: 1026px) and (max-width: 1441px) {
+    .calculator{
+        width: 50%;
+        height: 60%;
+
+    }
+
+    .calc-container{
+        padding: 10px;
+        height: 320px;
+    }
+
+    .calc-container .row {
+        display: flex;
+        flex-wrap: wrap; /* Ensure buttons wrap to the next line if needed */
+        gap: 4px; /* Add space between button blocks */
+    }
+
+    .calc-container .row button{
+        width: 100px;
+        height: 45px;
+        margin: 7px 5px;
+        font-size: 14px;
+        box-shadow: 0px 2px #ECCA9C;
+    }
+
+    .calc-input #screen{
+        height: 90px;
+        text-align: right;
+    }
+
+    .row button:hover {
+        box-shadow: inset 5px 5px 8px rgba(16, 16, 16, .1),
+            inset -5px -5px 8px #fff;
+        background: #fff;
+    }
+} 
+
+/* Default style for smaller screens */
+.calculator {
+    width: 90%;
+    max-width: 500px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.calc-container {
+    padding: 10px;
+    height: auto;
+    background-color: #181f32;
+    border-radius: 8px;
+}
+
+.calc-input #screen {
+    height: 80px;
+    font-size: 2em;
+}
+
+.calc-container .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px; /* Add space between button blocks */
+    justify-content: center;
+}
+
+.calc-container .row button {
+    flex: 1 1 20%; /* Allow buttons to grow and shrink */
+    max-width: 70px;
+    height: 50px;
+    font-size: 1.2em;
+    margin: 2px;
+    box-shadow: 0px 2px #ECCA9C;
+}
+
+@media only screen and (max-width: 376px) {
+    .calc-input #screen {
+        height: 60px;
+        font-size: 1.5em;
+    }
+
+    .calc-container .row button {
+        flex: 1 1 22%; /* Adjust button size for very small screens */
+        max-width: 60px;
+        height: 45px;
+        font-size: 1em;
+    }
+}
+
+@media only screen and (min-width: 376px) and (max-width: 426px) {
+    .calc-input #screen {
+        height: 70px;
+        font-size: 1.8em;
+    }
+
+    .calc-container .row button {
+        flex: 1 1 20%;
+        max-width: 65px;
+        height: 50px;
+        font-size: 1.1em;
+    }
+}
+
+@media only screen and (min-width: 426px) and (max-width: 770px) {
+    .calc-input #screen {
+        height: 80px;
+        font-size: 2em;
+    }
+
+    .calc-container .row button {
+        flex: 1 1 18%;
+        max-width: 70px;
+        height: 50px;
+        font-size: 1.2em;
+    }
+}
+
+@media only screen and (min-width: 770px) {
+    .calc-input #screen {
+        height: 90px;
+        font-size: 2.2em;
+    }
+
+    .calc-container .row button {
+        flex: 1 1 15%;
+        max-width: 80px;
+        height: 55px;
+        font-size: 1.2em;
+    }
+}

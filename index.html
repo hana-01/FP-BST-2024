@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css//style.css">
+</head>
+<body>
+    <div class="calculator">
+        <div class="calc-tittle">
+            <div class="calc-text">
+                <h2>Calculator</h2>
+            </div>
+            <form class="theme-toggle">
+                    <label class="toggle-option" for="theme-toggle-1" >1</label>
+                    <input type="radio" id="theme-toggle-1" name="btn" value="1" checked>
+                    <label class="toggle-option" for="theme-toggle-2">2</label>
+                    <input type="radio" id="theme-toggle-2" name="btn" value="2">
+                    <label class="toggle-option" for="theme-toggle-3">3</label>
+                    <input type="radio" id="theme-toggle-3" name="btn" value="3">
+            </form>
+        </div>
+
+        <div class="calc-input">
+            <input id="screen" type="text" placeholder="0" readonly>
+        </div>
+
+        <div class="calc-container">
+            <div class="row">
+                <button id="backspace-btn" class="for-pc" onclick="backspc()">CE</button>
+                <button class="for-pc" onclick="fact()">x!</button>
+                <button class="btn">(</button>
+                <button class="btn">)</button>
+                <button onclick="div100()">%</button>
+                <button id="clear-button" onclick="screen.value=''">AC</button>
+            </div>
+            <div class="row">
+                <button class="for-pc" onclick="sin()">sin</button>
+                <button class="for-pc" onclick="pi()">pi</button>
+                <button class="btn">7</button>
+                <button class="btn">8</button>
+                <button class="btn">9</button>
+                <button class="btn">÷</button>
+            </div>
+            <div class="row">
+                <button class="for-pc" onclick="cos()">cos</button>
+                <button class="for-pc" onclick="log()">log</button>
+                <button class="btn">4</button>
+                <button class="btn">5</button>
+                <button class="btn">6</button>
+                <button class="btn">×</button>
+            </div>
+            <div class="row">
+                <button class="for-pc" onclick="tan()">tan</button>
+                <button class="for-pc" onclick="sqrt()">root</button>
+                <button class="btn">1</button>
+                <button class="btn">2</button>
+                <button class="btn">3</button>
+                <button class="btn">-</button>
+            </div>
+            <div class="row">
+                <button class="for-pc" onclick="e()">e</button>
+                <button class="for-pc" onclick="pow()">x <span style="position: relative; bottom: .4em; right: .1em;">2</span></button>
+                <button class="btn">0</button>
+                <button class="btn">.</button>
+                <button id="eval" onclick="screen.value=eval(screen.value)">=</button>
+                <button class="btn">+</button>
+            </div>
+        </div>
+    </div> 
+    <script src="script/script.js"></script>
+</body>
+</html>
